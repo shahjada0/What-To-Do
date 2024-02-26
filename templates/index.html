@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What to do App</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #getActivity {
+            margin-top: 50px;
+        }
+        #activity {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">What to Do</a>
+    </nav>
+
+    <div class="container text-center">
+        <button id="getActivity" class="btn btn-primary btn-lg">What to do</button>
+        <div id="activity"></div>
+    </div>
+
+    <script>
+        document.getElementById('getActivity').addEventListener('click', function() {
+            fetch('/get_activity', {
+                method: 'POST',
+            })
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('activity').innerText = data;
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    </script>
+
+</body>
+</html>
