@@ -7,7 +7,6 @@ def get_random_activity():
     try:
         response = requests.get("https://www.boredapi.com/api/activity")
         data = response.json()
-        print(response.text)
         return data['activity']
     except Exception as e:
         return f"Error fetching activity: {e}"
