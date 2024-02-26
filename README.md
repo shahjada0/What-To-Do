@@ -22,6 +22,7 @@ Simply click on the big, shiny button in the center of the screen, and voilà! T
 - Flask 🌶️
 - HTML 🖥️
 - CSS 🎨
+- JavaScript 🌟
 
 ## 🌟 Credits
 
